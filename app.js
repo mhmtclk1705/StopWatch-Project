@@ -11,11 +11,11 @@ let timeUpdate;
 
 startPauseResume.addEventListener("click", (e) => {
   if (e.target.innerText == "Start") {
-    e.target.innerHTML = "<span class='ui-button-text'>Pause</span>";
+    e.target.innerText = "Pause";
     updateTime(0, 0, 0, 0);
   } else if (e.target.innerText == "Pause") {
     clearInterval(timeUpdate);
-    e.target.innerHTML = "<span class='ui-button-text'>Resume</span>";
+    e.target.innerText = "Resume";
   } else if (e.target.innerText == "Resume") {
     prev_hours = parseInt(_hours.innerHTML);
     prev_minutes = parseInt(_minutes.innerHTML);
@@ -24,20 +24,20 @@ startPauseResume.addEventListener("click", (e) => {
 
     updateTime(prev_hours, prev_minutes, prev_seconds, prev_milliseconds);
 
-    e.target.innerHTML = "<span class='ui-button-text'>Pause</span>";
+    e.target.innerText = "Pause";
   }
 });
 
 reset.addEventListener("click", () => {
   if (timeUpdate) clearInterval(timeUpdate);
   setStopwatch(0, 0, 0, 0);
-  startPauseResume.innerHTML = "<span class='ui-button-text'>Start</span>";
+  startPauseResume.innerText = "Start";
 });
 
 function updateTime(prev_hours, prev_minutes, prev_seconds, prev_milliseconds) {
   const startTime = new Date();
 
-  timeUpdate = setInterval(function () {
+  timeUpdate = setInterval (() => {
     const timeElapsed = new Date().getTime() - startTime.getTime();
 
     hours = parseInt(timeElapsed / 1000 / 60 / 60) + prev_hours;

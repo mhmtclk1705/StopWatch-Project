@@ -65,13 +65,13 @@ function updateTime(prev_hours, prev_minutes, prev_seconds, prev_milliseconds) {
 }
 
 function setStopwatch(hours, minutes, seconds, milliseconds) {
-  _hours.innerText = prependZero(hours, 2);
-  _minutes.innerText = prependZero(minutes, 2);
-  _seconds.innerText = prependZero(seconds, 2);
-  _milliseconds.innerText = prependZero(milliseconds, 2);
+  _hours.innerText = padStart(hours, 2);
+  _minutes.innerText = padStart(minutes, 2);
+  _seconds.innerText = padStart(seconds, 2);
+  _milliseconds.innerText = padStart(milliseconds, 2);
 }
 
-function prependZero(time, length) {
+function padStart(time, length) {
   time = new String(time);
   return new Array(Math.max(length - time.length + 1, 0)).join("0") + time;
 }

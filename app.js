@@ -17,10 +17,10 @@ startPauseResume.addEventListener("click", (e) => {
     clearInterval(timeUpdate);
     e.target.innerText = "Resume";
   } else if (e.target.innerText == "Resume") {
-    prev_hours = parseInt(_hours.innerHTML);
-    prev_minutes = parseInt(_minutes.innerHTML);
-    prev_seconds = parseInt(_seconds.innerHTML);
-    prev_milliseconds = parseInt(_milliseconds.innerHTML);
+    prev_hours = parseInt(_hours.innerText);
+    prev_minutes = parseInt(_minutes.innerText);
+    prev_seconds = parseInt(_seconds.innerText);
+    prev_milliseconds = parseInt(_milliseconds.innerText);
 
     updateTime(prev_hours, prev_minutes, prev_seconds, prev_milliseconds);
 
